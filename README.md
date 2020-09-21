@@ -40,8 +40,9 @@ $ curl -fsSL https://get.docker.com -o get-docker.sh
 $ sudo sh get-docker.sh
 # Allow the pi user to run docker containers
 $ sudo usermod -aG docker pi
-# TODO: define how to run this image
 
+# To run the latest version
+$ docker run richievos/fanpi:latest
 ```
 
 ## App setup for local development
