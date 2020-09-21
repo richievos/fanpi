@@ -1,0 +1,20 @@
+<!doctype html>
+<title>Fanpi</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+</nav>
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+
+  <ol>
+  {% for speed in speeds %}
+    <li class="{{ speed['class'] }}">{{ speed['speed'] }}</li>
+  {% endfor %}
+  </ol>
+  {% block content %}{% endblock %}
+</section>

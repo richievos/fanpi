@@ -1,0 +1,4 @@
+graft fanpi/static
+graft fanpi/templates
+graft test
+global-exclude *.pyc

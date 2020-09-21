@@ -2,6 +2,8 @@
 
 This provides a simple web ui for controlling a fan from a Raspberry Pi. The inspiration for this was the [DIY KICKR HEADWIND (HRM CONTROLLED FAN)](https://www.youtube.com/watch?v=6tJlJQgutkI), but I didn't really want to do the automatic controls, and I wanted to use the Pi I had.
 
+The app is a simple Python Flask app.
+
 ## Electrical description for non-experts
 
 The general setup is the web UI controls trigger the output pins on the Pi, triggering the appropriate relay on the Pi, sending 120v to the appropriate wires in the fan, speeding it up or down. Originally I was hoping to be able to do a fully variable fan speed, but the way these fans are wired doesn't actually allow for that (at least trivially to me).
@@ -29,3 +31,23 @@ Required Components:
 * some wire for connecting the relay channels together
 * a power connection for your Pi (eg a usb cord + usb power adapter)
 * a network connection for your Pi (an ethernet connection or a Pi with wifi or a wifi adapter)
+
+## Install on Raspberry Pi
+
+```shell
+# Install docker
+$ curl -fsSL https://get.docker.com -o get-docker.sh
+$ sudo sh get-docker.sh
+# Allow the pi user to run docker containers
+$ sudo usermod -aG docker pi
+# TODO: define how to run this image
+
+```
+
+## App setup for local development
+
+The App is a Python Flask app.
+
+```shell
+$ pip install -r requirements.txt
+```
